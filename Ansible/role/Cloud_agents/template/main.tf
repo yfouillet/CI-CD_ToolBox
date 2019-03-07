@@ -38,13 +38,6 @@ module "vpc" {
 }
 
 
-{% endif %}
-
-
-
-
-
-
 module "vote_service_sg" {
   source = "terraform-aws-modules/security-group/aws"
 
@@ -68,6 +61,10 @@ module "vote_service_sg" {
     },
   ]
 }
+
+
+{% endif %}
+
 
 module "ec2_cluster" {
   source                 = "terraform-aws-modules/ec2-instance/aws"
