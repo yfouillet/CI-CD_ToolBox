@@ -15,6 +15,6 @@ azurerm_tenant_id       = "{{ azurerm_tenant_id }}"
 
 {% if provider == google %}
 google_credentials = "${file("google_account.json")}"
-google_project     = "{{ my-project-id }}"
+google_project     = "{{ google_project }}"
 google_region      = "{{ google_region }}"
 {% endif %}
