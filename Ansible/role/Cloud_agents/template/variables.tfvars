@@ -6,7 +6,11 @@ aws_secret_key = "{{ aws_secret_key }}"
 aws_region     = "{{ aws_region }}"
 
 {% for {{ aws_number_agent }} in range(1,n) %}
-{% for line in check[{{n}}][2:] %}
+
+
+Deploy
+
+
 {% endfor %}
 
 
