@@ -7,9 +7,7 @@ provider "aws" {
   region     = "${var.aws_region}"
 }
 
-{% endif %}
-
-
+# Configure the VPC
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
@@ -38,6 +36,14 @@ module "vpc" {
     Name = "vpc-name"
   }
 }
+
+
+{% endif %}
+
+
+
+
+
 
 module "vote_service_sg" {
   source = "terraform-aws-modules/security-group/aws"
