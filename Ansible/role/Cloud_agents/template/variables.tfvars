@@ -4,30 +4,7 @@
 aws_access_key = "{{ aws_access_key }}"
 aws_secret_key = "{{ aws_secret_key }}"
 aws_region     = "{{ aws_region }}"
-
-{% for {{ aws_number_agent }} in range(1,n) %}
-
-
-Deploy
-
-
-{% endfor %}
-
-
-
-
 {% endif %}
-
-
-
-
-
-
-
-
-
-
-
 
 {% if pazurerm == true %}
 azurerm_subscription_id = "{{ azurerm_subscription_id }}"
