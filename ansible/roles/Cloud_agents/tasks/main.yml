@@ -22,12 +22,21 @@
 
 - template:
     src: aws.tfvars.j2
-    dest: tempDIR/AWS/variables.tf
+    dest: tempDIR/AWS/variables.tfvars
 
 - template:
     src: azure.tfvars.j2
-    dest: tempDIR/AZURE/variables.tf
+    dest: tempDIR/AZURE/variables.tfvars
 
 - template:
     src: google.tfvars.j2
-    dest: tempDIR/GOOGLE/variables.tf
+    dest: tempDIR/GOOGLE/variables.tfvars
+
+- template:
+    src: azure.main.tf.j2
+    dest: tempDIR/AZURE/main.tf
+
+- terraform:
+    project_path: "tempDIR/AZURE/"
+    force_init: "true"
+    state: planned
