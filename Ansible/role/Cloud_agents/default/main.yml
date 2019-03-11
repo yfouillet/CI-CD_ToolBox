@@ -1,5 +1,15 @@
 aws_access_key: "test"
-
-
-
 provider: "aws"
+
+aws_access_key: "test"
+aws_secret_key: "test"
+aws_region    : "test"
+
+azurerm_subscription_id: "test"
+azurerm_client_id      : "test"
+azurerm_client_secret  : "test"
+azurerm_tenant_id      : "test"
+
+google_credentials: "${file("google_account.json")}"
+google_project    : "test"
+google_region     : "test"

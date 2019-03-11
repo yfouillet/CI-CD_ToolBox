@@ -1,0 +1,6 @@
+- template:
+    src: variables.tfvars.j2
+    dest: variables.tfvars
+    owner: ansible
+    group: ansible
+    mode: "u=rw,g=r,o=r"
