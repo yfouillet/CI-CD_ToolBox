@@ -1,0 +1,6 @@
+- template:
+    src: main.tf.j2
+    dest: main.tf
+    owner: ansible
+    group: ansible
+    mode: "u=rw,g=r,o=r"
