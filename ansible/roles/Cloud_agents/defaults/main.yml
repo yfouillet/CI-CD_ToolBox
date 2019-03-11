@@ -10,10 +10,10 @@ aws_secret_key: "test"
 aws_region    : "test"
 
 
-azurerm_subscription_id: "13c35d5d-3e1b-4fe4-b414-5bf8e03ee3b1"
-azurerm_client_id      : "eab2bbd5-ad78-4b27-b261-b52883b3bae9"
-azurerm_client_secret  : "KiaAIR$oe12ugGS%vQGsZdyh7%E2jhV5DkN6o@JJ"
-azurerm_tenant_id      : "5aab243e-c13b-462f-b406-cb42c683c4a6"
+azurerm_subscription_id:  "13c35d5d-3e1b-4fe4-b414-5bf8e03ee3b1"
+azurerm_client_id: "447c78b9-4599-4458-b1a5-b9c70ffdbe35"
+azurerm_client_secret : "8281d087-b26a-4662-bb74-0d4c41d20091"
+azurerm_tenant_id : "5aab243e-c13b-462f-b406-cb42c683c4a6"
 
 google_credentials: '"${file("google_account.json")}"'
 google_project    : "test"

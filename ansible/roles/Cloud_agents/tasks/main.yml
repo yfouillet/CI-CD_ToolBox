@@ -38,5 +38,6 @@
 
 - terraform:
     project_path: "tempDIR/AZURE/"
-    force_init: "true"
-    state: planned
+    force_init: "false"
+    variables_file: "tempDIR/AZURE/variables.tfvars"
+    state: present
