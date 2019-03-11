@@ -1,9 +1,14 @@
 aws_access_key: "test"
 provider: "aws"
 
+aws_bucket_tfstate: "tfstate-terraform"
+aws_region_tfstate: "us-east"
+aws_bucketkey_tfstate: "Master-terraform/terraform.tfstate"
+
 aws_access_key: "test"
 aws_secret_key: "test"
 aws_region    : "test"
+
 
 azurerm_subscription_id: "test"
 azurerm_client_id      : "test"

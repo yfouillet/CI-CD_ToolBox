@@ -1,3 +1,12 @@
+terraform {
+ backend "s3" {
+ encrypt = true
+ bucket = "${var.aws_bucket_tfstate}"
+ region = "${var.aws_region_tfstate}"
+ key = "${var.aws_bucketkey_tfstate}"
+ }
+}
+
 # Configure the AWS Provider
 provider "aws" {
   access_key = "${var.aws_access_key}"
