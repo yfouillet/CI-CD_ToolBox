@@ -2,10 +2,10 @@
     "builders": [{
       "type": "azure-arm",
   
-      "client_id": "f5b6a5cf-fbdf-4a9f-b3b8-3c2cd00225a4",
-      "client_secret": "0e760437-bf34-4aad-9f8d-870be799c55d",
-      "tenant_id": "72f988bf-86f1-41af-91ab-2d7cd011db47",
-      "subscription_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
+ #     "client_id": "f5b6a5cf-fbdf-4a9f-b3b8-3c2cd00225a4",
+ #    "client_secret": "0e760437-bf34-4aad-9f8d-870be799c55d",
+ #    "tenant_id": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+ #     "subscription_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
   
       "managed_image_resource_group_name": "EPSI-projet-github",
       "managed_image_name": "myPackerImage",
