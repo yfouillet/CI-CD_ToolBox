@@ -1,5 +1,5 @@
 - template:
-    src: variables.tfvars.j2
+    src: aws.tfvars.j2
     dest: variables.tfvars
     owner: ansible
     group: ansible
