@@ -1,3 +1,3 @@
-- hosts: test
+- hosts: localhost
   roles:
      - Cloud_agents
