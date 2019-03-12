@@ -11,7 +11,7 @@ azurerm_rg_tag_env: "PROD"
 azurerm_rg_name: "RG-terraform"
 azurerm_rg_region: "East US"
 azurerm_rg_tag_env: "PROD"
-
+azurerm_bucket_rg: "ressource_group"
 
 ############ AWS VPC ############
 aws_vpc_name: "VPC-terraform"
