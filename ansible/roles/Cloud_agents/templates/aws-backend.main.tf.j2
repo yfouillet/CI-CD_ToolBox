@@ -1,0 +1,6 @@
+module "s3-buckets" {
+  source      = "devops-workflow/s3-buckets/aws"
+  names       = "bucket1"
+  environment = "dev"
+  org         = "corp"
+}

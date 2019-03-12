@@ -1,20 +1,20 @@
 aws_access_key: "test"
 provider: "aws"
 
-aws_bucket_tfstate: "test"
-aws_region_tfstate: "us-east"
-aws_bucketkey_tfstate: "Master-terraform/terraform.tfstate"
-
-aws_access_key: "test"
-aws_secret_key: "test"
-aws_region    : "test"
+############ azurerm ressource group ############
+azurerm_rg_name: "RG-terraform"
+azurerm_rg_region: "East US"
+azurerm_rg_tag_env: "PROD"
 
 
-azurerm_subscription_id:  "13c35d5d-3e1b-4fe4-b414-5bf8e03ee3b1"
-azurerm_client_id: "447c78b9-4599-4458-b1a5-b9c70ffdbe35"
-azurerm_client_secret : "8281d087-b26a-4662-bb74-0d4c41d20091"
-azurerm_tenant_id : "5aab243e-c13b-462f-b406-cb42c683c4a6"
+############ azurerm ressource group ############
+azurerm_rg_name: "RG-terraform"
+azurerm_rg_region: "East US"
+azurerm_rg_tag_env: "PROD"
 
-google_credentials: '"${file("google_account.json")}"'
-google_project    : "test"
-google_region     : "test"
+
+############ AWS VPC ############
+aws_vpc_name: "VPC-terraform"
+aws_vpc_cidr: "10.0.0.0/16"
+aws_sg_name: "SG-terraform"
+aws_sg_desc: "Security group for AzureDevops agents"
