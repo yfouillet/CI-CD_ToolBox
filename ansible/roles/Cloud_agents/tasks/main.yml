@@ -6,37 +6,47 @@
     mode: "0755"
 
 - file:
-    path: "tempDIR/AWS"
+    path: "tempDIR/Terraform/AWS"
     state: "directory"
     mode: 0755
 
 - file:
-    path: "tempDIR/AZURE"
+    path: "tempDIR/Terraform/AZURE"
     state: "directory"
     mode: 0755
 
 - file:
-    path: "tempDIR/GOOGLE"
+    path: "tempDIR/Terraform/GOOGLE"
+    state: "directory"
+    mode: 0755
+
+- file:
+    path: "tempDIR/Packer/"
     state: "directory"
     mode: 0755
 
 - template:
     src: "aws.tfvars.j2"
-    dest: "tempDIR/AWS/terraform.tfvars"
+    dest: "tempDIR/Terraform/AWS/terraform.tfvars"
 
 - template:
     src: "azure.tfvars.j2"
-    dest: "tempDIR/AZURE/terraform.tfvars"
+    dest: "tempDIR/Terraform/AZURE/terraform.tfvars"
 
 - template:
     src: "google.tfvars.j2"
-    dest: "tempDIR/GOOGLE/terraform.tfvars"
+    dest: "tempDIR/Terraform/GOOGLE/terraform.tfvars"
 
 - template:
     src: "azure.main.tf.j2"
-    dest: "tempDIR/AZURE/main.tf"
+    dest: "tempDIR/Terraform/AZURE/main.tf"
+
+- template:
+    src: "packer.json.j2"
+    dest: "tempDIR/Packer/packer.json"
+
 
 - terraform:
-    project_path: "tempDIR/AZURE/"
+    project_path: "tempDIR/Terraform/AZURE/"
     force_init: "true"
     state: present
