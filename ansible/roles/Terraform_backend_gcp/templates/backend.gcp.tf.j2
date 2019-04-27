@@ -1,0 +1,24 @@
+# https://www.terraform.io/docs/providers/google/r/storage_bucket.html
+# requirement, create GCP project (ex terraform-test) => https://console.cloud.google.com/cloud-resource-manager
+# create service account (ex terraform-bakend)
+
+## The name of the bucket is only for all GCP users
+
+
+data "google_client_config" "default" {}
+
+resource "google_storage_bucket" "default" {
+  name     = "${var.name}"
+  location = "${length(var.region) > 0 ? var.region : data.google_client_config.default.region}"
+  project     = "${var.project}"
+  storage_class = "${var.storage_class}"
+  force_destroy = "${var.force_destroy}"
+  
+  versioning {
+    enabled = "${var.versioning_enabled}"
+  }
+  
+  encryption {
+    default_kms_key_name = "${var.kms_key_name}"
+}
+}

@@ -1,0 +1,11 @@
+- file:
+    path: tempDIR/BACKEND/GCP
+    state: directory
+    mode: 0755
+
+- template:
+    src: backend.gcp.tf.j2
+    dest: tempDIR/BACKEND/GCP/terraform.tf
+- template:
+    src: backend.gcp.tf.j2
+    dest: tempDIR/BACKEND/GCP/variables.tf

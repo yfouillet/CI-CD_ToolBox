@@ -1,0 +1,48 @@
+## GOOGLE CLOUD PLATEFORM REGION 2019##
+#asia-east1, asia-east2, asia-northeast1, asia-south1, asia-southeast1
+#australia-southeast1
+#europe-north1, europe-west1, europe-west2, europe-west3, europe-west4
+#northamerica-northeast1, southamerica-east1, 
+#us-central1, us-east1, us-east4, us-west1, us-west2
+
+provider "google" {
+  credentials = "${file("account.json")}"
+  project     = "{{ gcp_project }}"
+  region      = "{{ gcp_region }}"
+}
+
+variable "name" {
+  type        = "string"
+  description = "Bucket name, e.g. 'terraform-bakend-PRD-entreprise1', this name is only for all GCP users"
+  default     = "{{ backend_bucket_name }}"
+}
+
+variable "versioning_enabled" {
+  description = "While set to true, versioning is fully enabled for this bucket."
+  default     = "{{ backend_versioning_enabled }}"
+}
+
+variable "region" {
+  description = "The GCS region, if not set, use google provider region and if also not set the default region in google account"
+  default     = "{{ backend_versioning_region }}"
+}
+
+variable "project" {
+  description = "The project in which the resource belongs. If it is not provided, the provider project is used."
+  default     = "{{ backend_gcp_project }}"
+}
+
+variable "force_destroy" {
+  description = "When deleting a bucket, this boolean option will delete all contained objects."
+  default     = "{{ backend_force_destroy }}"
+}
+
+variable "storage_class" {
+  description = "The Storage Class of the new bucket. Supported values include: MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE."
+  default     = "{{ backend_storage_class }}"
+}
+
+variable "kms_key_name" {
+  description = "A Cloud KMS key that will be used to encrypt objects inserted into this bucket"
+  default     = "{{ backend_kms_key_name }}"
+}
