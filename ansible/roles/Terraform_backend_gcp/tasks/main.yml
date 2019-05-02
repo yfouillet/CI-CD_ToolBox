@@ -5,7 +5,7 @@
 
 - template:
     src: backend.gcp.tf.j2
-    dest: tempDIR/BACKEND/GCP/terraform.tf
+    dest: Terraform/BACKEND/GCP/terraform.tf
 - template:
     src: backend.gcp.tfvars.j2
-    dest: tempDIR/BACKEND/GCP/variables.tf
+    dest: Terraform/BACKEND/GCP/variables.tf
