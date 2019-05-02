@@ -1,10 +1,10 @@
 gcp_region: "europe-west1" 
-gcp_project: "gcp-project-name"
+gcp_project: "terraform-test"
 
 backend_bucket_name: "terraform-tfstate-bucket"
 backend_versioning_enabled: "true"
 backend_versioning_region: "europe-west1"
-backend_gcp_project: "gcp-project-name"
+backend_gcp_project: ""
 backend_force_destroy: "false"
 backend_storage_class: "REGIONAL"
 backend_kms_key_name: ""
