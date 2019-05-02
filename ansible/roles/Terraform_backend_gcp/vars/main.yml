@@ -1,5 +1,5 @@
 gcp_region: "europe-west1" 
-gcp_project: "terraform-test"
+gcp_project: "terraform-test-237408"
 
 backend_bucket_name: "terraform-tfstate-bucket"
 backend_versioning_enabled: "true"
