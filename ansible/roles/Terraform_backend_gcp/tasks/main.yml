@@ -1,5 +1,5 @@
 - file:
-    path: tempDIR/BACKEND/GCP
+    path: Terraform/BACKEND/GCP
     state: directory
     mode: 0755
 
