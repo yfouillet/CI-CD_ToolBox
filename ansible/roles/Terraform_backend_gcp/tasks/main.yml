@@ -6,6 +6,11 @@
 - template:
     src: backend.gcp.tf.j2
     dest: Terraform/BACKEND/GCP/terraform.tf
+
 - template:
     src: backend.gcp.tfvars.j2
     dest: Terraform/BACKEND/GCP/variables.tf
+
+- template:
+    src: output.backend.gcp.tfvars.j2
+    dest: Terraform/BACKEND/GCP/output.tf
