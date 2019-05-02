@@ -1,8 +1,8 @@
 gcp_region: "europe-west1" 
 gcp_project: "terraform-test-237408"
 
-backend_bucket_name: "terraform-tfstate-bucket-CG"
-backend_versioning_enabled: "true"
+backend_bucket_name: "terraform-tfstate-bucket-cubigroup" # Bucket name, e.g. 'terraform-bakend-PRD-entreprise1', this name is only for all GCP users
+backend_versioning_enabled: "true" 
 backend_versioning_region: "europe-west1"
 backend_gcp_project: ""
 backend_force_destroy: "false"
