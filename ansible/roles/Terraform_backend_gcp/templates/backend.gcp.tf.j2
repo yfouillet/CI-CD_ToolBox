@@ -4,7 +4,6 @@
 
 ## The name of the bucket is only for all GCP users
 
-
 data "google_client_config" "default" {
 
 }
@@ -23,8 +22,5 @@ resource "google_storage_bucket" "default" {
   encryption {
     default_kms_key_name = "${var.kms_key_name}"
 }
-
-depends_on = ["data.google_client_config.selected"]
-
 
 }
