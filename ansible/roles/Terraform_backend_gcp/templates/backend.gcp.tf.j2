@@ -7,19 +7,6 @@
 
 data "google_client_config" "default" {
 
-filter {
-name = "tag:Name"
-values = ["doesnotexist"]
-}
-filter {
-name = "state"
-values = ["available"]
-}
-filter {
-name = "attachment.vpc-id"
-values = ["${var.vpc_id}"]
-}
-
 }
 
 resource "google_storage_bucket" "default" {
