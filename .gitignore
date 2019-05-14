@@ -5,10 +5,10 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
-
+ansible/Terraform
 # Crash log files
 crash.log
-
+terraform.exe
 # Ignore any .tfvars files that are generated automatically for each Terraform run. Most
 # .tfvars files are managed as part of configuration and so should be included in
 # version control.
