@@ -1,0 +1,66 @@
+#####################################################################
+# GKE Cluster
+#####################################################################
+
+terraform {
+  backend "gcs" {
+    bucket  = "${var.backend_gcp_bucket}" 
+    prefix  = "${var.backend_gcp_prefix}"
+    project = "${var.project}"
+  }
+}
+
+resource "google_container_cluster" "gc-euw4-k8s" {
+  name                 = "${var.k8s_cluster_name}"
+  region               = "${var.k8s_cluster_region}"
+  
+  min_master_version = "${var.k8s_cluster_master_min_version}"
+  node_version = "${var.k8s_cluster_node_version}"
+  network = "${var.k8s_cluster_network}"
+  subnetwork = "${var.k8s_cluster_subnetwork}"
+
+  remove_default_node_pool = "${var.k8s_cluster_remove_default_node_pool}"
+  initial_node_count = "${var.k8s_cluster_initial_node_count}"
+  
+  ip_allocation_policy {
+    use_ip_aliases = "${var.k8s_cluster_use_ip_aliases}"
+  }
+
+  master_auth {
+    username = "${var.k8s_cluster_username}"
+    password = "${var.k8s_cluster_password}"
+  }
+
+}
+
+resource "google_container_node_pool" "autoscaling-pool" {
+  name       = "${var.k8s_auto_scal_pool_name}"
+  region     = "${var.k8s_auto_scal_pool_region}"
+  cluster    = "${google_container_cluster.gc-euw4-k8s.name}"
+  node_count = "${var.k8s_auto_scal_pool_node_count}"
+
+  autoscaling {
+    min_node_count = "${var.k8s_auto_scal_pool_min_node_count}"
+    max_node_count = "${var.k8s_auto_scal_pool_max_node_count}"
+  }
+
+  management {
+    auto_repair = "${var.k8s_auto_scal_pool_auto_repair}"
+    auto_upgrade = "${var.k8s_auto_scal_pool_auto_upgrade}"
+  }
+
+  node_config {
+    preemptible  = "${var.k8s_auto_scal_pool_preemptible}"
+    machine_type = "${var.k8s_auto_scal_pool_machine_type}"
+
+    oauth_scopes = [
+      "https://www.googleapis.com/auth/devstorage.read_only",
+      "https://www.googleapis.com/auth/logging.write",
+      "https://www.googleapis.com/auth/monitoring",
+      "https://www.googleapis.com/auth/service.management.readonly",
+      "https://www.googleapis.com/auth/servicecontrol",
+      "https://www.googleapis.com/auth/trace.append",
+      "https://www.googleapis.com/auth/compute",
+    ]
+  }
+}

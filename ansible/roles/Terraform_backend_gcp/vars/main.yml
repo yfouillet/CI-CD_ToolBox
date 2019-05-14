@@ -1,10 +1,81 @@
-gcp_region: "europe-west1" 
-gcp_project: "terraform-test-237408"
+backend_gcp_region: "europe-west1" 
+backend_gcp_project: "terraform-test-237408"
 
-backend_bucket_name: "terraform-tfstate-bucket-cubigroup" # Bucket name, e.g. 'terraform-bakend-PRD-entreprise1', this name is only for all GCP users
+backend_bucket_name: "terraform-tfstate-bucket-cubigroup-1" # Bucket name, e.g. 'terraform-bakend-PRD-entreprise1', this name is only for all GCP users
 backend_versioning_enabled: "true" 
 backend_versioning_region: "europe-west1"
 backend_gcp_project: ""
 backend_force_destroy: "false"
 backend_storage_class: "REGIONAL"
 backend_kms_key_name: ""
+
+k8s_gcp_project: "europe-west1" 
+k8s_gcp_region: "terraform-test-237408"
+
+k8s_gcp_backend_bucket: "tf-state-prod-73917"
+k8s_gcp_backend_prefix: "terraform/state/GCP_K8S"
+
+## K8s cluster config
+
+k8s_cluster_username: "admin"
+k8s_cluster_password: ""
+k8s_cluster_name: "gc-euw4-k8s"
+k8s_cluster_region: "europe-west4"
+k8s_cluster_master_min_version: "1.12.7-gke.10"
+k8s_cluster_node_version: "1.12.7-gke.10"
+k8s_cluster_network: "default"
+k8s_cluster_subnetwork: "default"
+k8s_cluster_remove_default_node_pool: "true"
+k8s_cluster_initial_node_count: "1"
+k8s_cluster_use_ip_aliases: "true"
+
+## K8s auto scaling config
+
+k8s_auto_scal_pool_name: "autoscaling-pool" 
+k8s_auto_scal_pool_region: "europe-west4"
+
+
+variable "k8s_auto_scal_pool_name" {
+  type        = "string"
+  default     = "{{ k8s_auto_scal_pool_name }}"
+}
+
+variable "k8s_auto_scal_pool_region" {
+  type        = "string"
+  default     = "{{ k8s_auto_scal_pool_region }}"
+}
+
+variable "k8s_auto_scal_pool_node_count" {
+  type        = "string"
+  default     = "1"
+}
+
+variable "k8s_auto_scal_pool_min_node_count" {
+  type        = "string"
+  default     = "1"
+}
+
+variable "k8s_auto_scal_pool_max_node_count" {
+  type        = "string"
+  default     = "3"
+}
+
+variable "k8s_auto_scal_pool_auto_repair" {
+  type        = "string"
+  default     = "true"
+}
+
+variable "k8s_auto_scal_pool_auto_upgrade" {
+  type        = "string"
+  default     = "true"
+}
+
+variable "k8s_auto_scal_pool_preemptible" {
+  type        = "string"
+  default     = "true"
+}
+
+variable "k8s_auto_scal_pool_machine_type" {
+  type        = "string"
+  default     = "n1-standard-1"
+}

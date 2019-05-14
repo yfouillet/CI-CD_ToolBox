@@ -1,0 +1,133 @@
+#####################################################################
+# Variables
+#####################################################################
+
+#####################################
+## Google Cloud Platform
+#####################################
+
+provider "google" {
+  project     = "{{ k8s_gcp_project }}"
+  region      = "{{ k8s_gcp_region }}"
+}
+
+#####################################
+## Backend
+#####################################
+
+variable "backend_gcp_bucket" {
+  type        = "string"
+  description = "Bucket name, in a already create bucket"
+  default     = "{{ backend_bucket_name }}"
+}
+
+variable "backend_gcp_prefix" {
+  type        = "string"
+  description = "Bucket name, in a already create bucket"
+  default     = "{{ k8s_gcp_backend_prefix }}"
+}
+
+#####################################
+## K8s cluster config
+#####################################
+
+variable "k8s_cluster_username" {
+  default = "{{ k8s_cluster_username }}"
+}
+variable "k8s_cluster_password" {
+    default = "{{ k8s_cluster_password }}"
+}
+
+variable "k8s_cluster_name" {
+  type        = "string"
+  default     = "{{ k8s_cluster_name }}"
+}
+
+variable "k8s_cluster_region" {
+  type        = "string"
+  default     = "{{ k8s_cluster_region }}"
+}
+
+variable "k8s_cluster_master_min_version" {
+  type        = "string"
+  default     = "{{ k8s_cluster_master_min_version }}"
+}
+
+variable "k8s_cluster_node_version" {
+  type        = "string"
+  default     = "{{ k8s_cluster_node_version }}"
+}
+
+variable "k8s_cluster_network" {
+  type        = "string"
+  default     = "{{ k8s_cluster_network }}"
+}
+
+variable "k8s_cluster_subnetwork" {
+  type        = "string"
+  default     = "{{ k8s_cluster_subnetwork }}"
+}
+
+variable "k8s_cluster_remove_default_node_pool" {
+  type        = "string"
+  default     = "{{ k8s_cluster_remove_default_node_pool }}"
+}
+
+variable "k8s_cluster_initial_node_count" {
+  type        = "string"
+  default     = "{{ k8s_cluster_initial_node_count }}"
+}
+
+variable "k8s_cluster_use_ip_aliases" {
+  type        = "string"
+  default     = "{{ k8s_cluster_use_ip_aliases }}"
+}
+
+#####################################
+## K8s auto scaling config
+#####################################
+
+variable "k8s_auto_scal_pool_name" {
+  type        = "string"
+  default     = "autoscaling-pool"
+}
+
+variable "k8s_auto_scal_pool_region" {
+  type        = "string"
+  default     = "europe-west4"
+}
+
+variable "k8s_auto_scal_pool_node_count" {
+  type        = "string"
+  default     = "1"
+}
+
+variable "k8s_auto_scal_pool_min_node_count" {
+  type        = "string"
+  default     = "1"
+}
+
+variable "k8s_auto_scal_pool_max_node_count" {
+  type        = "string"
+  default     = "3"
+}
+
+variable "k8s_auto_scal_pool_auto_repair" {
+  type        = "string"
+  default     = "true"
+}
+
+variable "k8s_auto_scal_pool_auto_upgrade" {
+  type        = "string"
+  default     = "true"
+}
+
+variable "k8s_auto_scal_pool_preemptible" {
+  type        = "string"
+  default     = "true"
+}
+
+variable "k8s_auto_scal_pool_machine_type" {
+  type        = "string"
+  default     = "n1-standard-1"
+}
