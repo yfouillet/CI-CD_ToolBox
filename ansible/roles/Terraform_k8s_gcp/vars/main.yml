@@ -31,4 +31,4 @@ k8s_auto_scal_pool_max_node_count: "3"
 k8s_auto_scal_pool_auto_repair: "true"
 k8s_auto_scal_pool_auto_upgrade: "true"
 k8s_auto_scal_pool_preemptible: "true"
-k8s_auto_scal_pool_machine_type: "f1-micro" # n1-standard-1
+k8s_auto_scal_pool_machine_type: "n1-standard-1" # n1-standard-1 f1-micro
