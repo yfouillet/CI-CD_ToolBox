@@ -9,7 +9,7 @@ k8s_gcp_backend_prefix: "terraform/state/GCP_K8S"
 
 k8s_cluster_username: "admin"
 k8s_cluster_password: ""
-k8s_cluster_name: "gc-euw4-k8s"
+k8s_cluster_name: "gcp-projet-cloud"
 k8s_cluster_region: "europe-west4"
 k8s_cluster_master_min_version: "1.12.7-gke.10"
 k8s_cluster_node_version: "1.12.7-gke.10"

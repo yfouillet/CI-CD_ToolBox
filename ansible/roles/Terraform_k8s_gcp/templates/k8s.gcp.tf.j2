@@ -3,7 +3,7 @@
 #####################################################################
 
 
-resource "google_container_cluster" "gc-euw4-k8s" {
+resource "google_container_cluster" "gcp-cluster-k8s" {
   name                 = "${var.k8s_cluster_name}"
   region               = "${var.k8s_cluster_region}"
   
@@ -29,7 +29,7 @@ resource "google_container_cluster" "gc-euw4-k8s" {
 resource "google_container_node_pool" "autoscaling-pool" {
   name       = "${var.k8s_auto_scal_pool_name}"
   region     = "${var.k8s_auto_scal_pool_region}"
-  cluster    = "${google_container_cluster.gc-euw4-k8s.name}"
+  cluster    = "${google_container_cluster.gcp-cluster-k8s.name}"
   node_count = "${var.k8s_auto_scal_pool_node_count}"
 
   autoscaling {
