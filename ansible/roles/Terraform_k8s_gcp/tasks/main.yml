@@ -1,0 +1,17 @@
+- file:
+    path: Terraform/K8s/GCP
+    state: directory
+    mode: 0755
+
+- template:
+    src: k8s.gcp.tf.j2
+    dest: Terraform/K8s/GCP/terraform.tf
+
+- template:
+    src: k8s.gcp.tfvars.j2
+    dest: Terraform/K8s/GCP/variables.tf
+
+- template:
+    src: output.gcp.tf.j2
+    dest: Terraform/K8s/GCP/output.tf
+

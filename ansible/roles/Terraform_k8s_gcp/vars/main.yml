@@ -1,0 +1,34 @@
+k8s_gcp_project: "terraform-test-237408" 
+k8s_gcp_region: "europe-west1"
+
+k8s_gcp_backend_bucket: ""
+k8s_gcp_backend_region: "europe-west1"
+k8s_gcp_backend_prefix: "terraform/state/GCP_K8S"
+
+## K8s cluster config
+
+k8s_cluster_username: "admin"
+k8s_cluster_password: ""
+k8s_cluster_name: "gc-euw4-k8s"
+k8s_cluster_region: "europe-west4"
+k8s_cluster_master_min_version: "1.12.7-gke.10"
+k8s_cluster_node_version: "1.12.7-gke.10"
+k8s_cluster_network: "default"
+k8s_cluster_subnetwork: "default"
+k8s_cluster_remove_default_node_pool: "true"
+k8s_cluster_initial_node_count: "1"
+k8s_cluster_use_ip_aliases: "true"
+
+## K8s auto scaling config
+
+k8s_auto_scal_pool_name: "autoscaling-pool" 
+k8s_auto_scal_pool_region: "europe-west4"
+
+k8s_auto_scal_pool_node_count: "1"
+
+k8s_auto_scal_pool_min_node_count: "1"
+k8s_auto_scal_pool_max_node_count: "3"
+k8s_auto_scal_pool_auto_repair: "true"
+k8s_auto_scal_pool_auto_upgrade: "true"
+k8s_auto_scal_pool_preemptible: "true"
+k8s_auto_scal_pool_machine_type: "f1-micro" # n1-standard-1

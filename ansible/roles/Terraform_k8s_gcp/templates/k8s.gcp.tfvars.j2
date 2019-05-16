@@ -3,7 +3,19 @@
 #####################################################################
 
 #####################################
-## Google Cloud Platform
+## Backend
+#####################################
+
+terraform {
+  backend "gcs" {
+    bucket  = "{{ k8s_gcp_backend_bucket }}" 
+    prefix  = "{{ k8s_gcp_backend_prefix }}"
+    project = "{{ k8s_gcp_backend_region }}"
+  }
+}
+
+#####################################
+## Google Cloud Platform providers
 #####################################
 
 provider "google" {
@@ -11,21 +23,7 @@ provider "google" {
   region      = "{{ k8s_gcp_region }}"
 }
 
-#####################################
-## Backend
-#####################################
 
-variable "backend_gcp_bucket" {
-  type        = "string"
-  description = "Bucket name, in a already create bucket"
-  default     = "{{ backend_bucket_name }}"
-}
-
-variable "backend_gcp_prefix" {
-  type        = "string"
-  description = "Bucket name, in a already create bucket"
-  default     = "{{ k8s_gcp_backend_prefix }}"
-}
 
 #####################################
 ## K8s cluster config
@@ -89,45 +87,45 @@ variable "k8s_cluster_use_ip_aliases" {
 
 variable "k8s_auto_scal_pool_name" {
   type        = "string"
-  default     = "autoscaling-pool"
+  default     = "{{ k8s_auto_scal_pool_name }}"
 }
 
 variable "k8s_auto_scal_pool_region" {
   type        = "string"
-  default     = "europe-west4"
+  default     = "{{ k8s_auto_scal_pool_region }}"
 }
 
 variable "k8s_auto_scal_pool_node_count" {
   type        = "string"
-  default     = "1"
+  default     = "{{ k8s_auto_scal_pool_node_count }}"
 }
 
 variable "k8s_auto_scal_pool_min_node_count" {
   type        = "string"
-  default     = "1"
+  default     = "{{ k8s_auto_scal_pool_min_node_count }}"
 }
 
 variable "k8s_auto_scal_pool_max_node_count" {
   type        = "string"
-  default     = "3"
+  default     = "{{ k8s_auto_scal_pool_max_node_count }}"
 }
 
 variable "k8s_auto_scal_pool_auto_repair" {
   type        = "string"
-  default     = "true"
+  default     = "{{ k8s_auto_scal_pool_auto_repair }}"
 }
 
 variable "k8s_auto_scal_pool_auto_upgrade" {
   type        = "string"
-  default     = "true"
+  default     = "{{ k8s_auto_scal_pool_auto_upgrade }}"
 }
 
 variable "k8s_auto_scal_pool_preemptible" {
   type        = "string"
-  default     = "true"
+  default     = "{{ k8s_auto_scal_pool_preemptible }}"
 }
 
 variable "k8s_auto_scal_pool_machine_type" {
   type        = "string"
-  default     = "n1-standard-1"
+  default     = "{{ k8s_auto_scal_pool_machine_type }}"
 }

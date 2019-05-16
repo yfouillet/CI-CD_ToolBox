@@ -1,3 +1,4 @@
 - hosts: localhost
   roles:
      - Terraform_backend_gcp
+     - Terraform_k8s_gcp

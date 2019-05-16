@@ -2,13 +2,6 @@
 # GKE Cluster
 #####################################################################
 
-terraform {
-  backend "gcs" {
-    bucket  = "${var.backend_gcp_bucket}" 
-    prefix  = "${var.backend_gcp_prefix}"
-    project = "${var.project}"
-  }
-}
 
 resource "google_container_cluster" "gc-euw4-k8s" {
   name                 = "${var.k8s_cluster_name}"
