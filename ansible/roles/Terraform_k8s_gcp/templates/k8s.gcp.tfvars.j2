@@ -23,8 +23,6 @@ provider "google" {
   region      = "{{ k8s_gcp_region }}"
 }
 
-
-
 #####################################
 ## K8s cluster config
 #####################################
@@ -41,9 +39,9 @@ variable "k8s_cluster_name" {
   default     = "{{ k8s_cluster_name }}"
 }
 
-variable "k8s_cluster_region" {
+variable "k8s_cluster_location" {
   type        = "string"
-  default     = "{{ k8s_cluster_region }}"
+  default     = "{{ k8s_cluster_location }}"
 }
 
 variable "k8s_cluster_master_min_version" {

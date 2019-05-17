@@ -1,8 +1,8 @@
 k8s_gcp_project: "terraform-test-237408" 
-k8s_gcp_region: "europe-west1"
+k8s_gcp_region: "europe-west4"
 
 k8s_gcp_backend_bucket: ""
-k8s_gcp_backend_region: "europe-west1"
+k8s_gcp_backend_region: "europe-west4"
 k8s_gcp_backend_prefix: "terraform/state/GCP_K8S"
 
 ## K8s cluster config
@@ -10,19 +10,27 @@ k8s_gcp_backend_prefix: "terraform/state/GCP_K8S"
 k8s_cluster_username: "admin"
 k8s_cluster_password: ""
 k8s_cluster_name: "gcp-projet-cloud"
-k8s_cluster_region: "europe-west4"
+
+# it's a very importante parameter :
+# - if you set a region name (regional cluster), exemple "europe-west4", the cluster create 1 master node for each zone in this region
+# - if you set a zone name (zone cluster), exemple "europe-west4-a", the cluster create 1 single master in this zone
+
+
+k8s_cluster_location: "europe-west4-a"
 k8s_cluster_master_min_version: "1.12.7-gke.10"
 k8s_cluster_node_version: "1.12.7-gke.10"
 k8s_cluster_network: "default"
 k8s_cluster_subnetwork: "default"
-k8s_cluster_remove_default_node_pool: "true"
+
+# it's true because the node pool is created in the next terraform module for more parametrable possibility
+k8s_cluster_remove_default_node_pool: "true" 
 k8s_cluster_initial_node_count: "1"
 k8s_cluster_use_ip_aliases: "true"
 
 ## K8s auto scaling config
 
 k8s_auto_scal_pool_name: "autoscaling-pool" 
-k8s_auto_scal_pool_region: "europe-west4"
+k8s_auto_scal_pool_region: "europe-west4-a"
 
 k8s_auto_scal_pool_node_count: "1"
 

@@ -1,9 +1,9 @@
-backend_gcp_region: "europe-west1"
+backend_gcp_region: "europe-west4"
 backend_gcp_project: "terraform-test-237408"
 
 backend_bucket_name: "" # Bucket name, e.g. 'terraform-bakend-PRD-entreprise1', this name is only for all GCP users
 backend_versioning_enabled: "true" 
-backend_versioning_region: "europe-west1"
+backend_versioning_region: "europe-west4"
 backend_force_destroy: "true"
 backend_storage_class: "REGIONAL"
 backend_kms_key_name: ""
