@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: traefik-service
+spec:
+  selector:
+    app: traefik-master
+    tier: reverse-proxy
+  ports:
+    - port: 80
+      name: http
+    - port: 443
+      name: https
+    - port: 8080
+      name: admin
+  type: LoadBalancer
+  loadBalancerIP: "34.90.180.98"
