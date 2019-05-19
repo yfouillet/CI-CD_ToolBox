@@ -12,5 +12,6 @@ sudo touch /mnt/traefik-acme/acme.json
 sudo chmod 600 /mnt/traefik-acme/acme.json
 sudo umount /mnt/traefik-acme
 else
-echo "file  not exists, continuing"
+echo "file  not exists"
+echo "not finished" > "/tmp/result.txt"
 fi
