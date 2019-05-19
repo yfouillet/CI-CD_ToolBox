@@ -24,7 +24,7 @@
       "type": "shell"
     },
     {
-      "destination": "/script",
+      "destination": "/script/",
       "source": "./start.sh",
       "type": "file"
     }
