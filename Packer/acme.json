@@ -12,18 +12,21 @@
     }
   ],
     "provisioners": [
-      {
-        "destination": "/",
-        "source": "./start.sh",
-        "type": "file"
-      },
+
       {
       "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
       "inline": [
-        "sudo mkdir /mnt/traefik-acme"
+        "sudo mkdir /mnt/traefik-acme",
+        "sudo mkdir /script",
+        "sudo chmod 777 -R /script"
       ],
       "inline_shebang": "/bin/sh -x",
       "type": "shell"
+    },
+    {
+      "destination": "/script",
+      "source": "./start.sh",
+      "type": "file"
     }
   ]
   }
