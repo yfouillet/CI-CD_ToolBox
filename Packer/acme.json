@@ -9,7 +9,6 @@
       "ssh_username": "packer",
       "zone": "europe-west4-a",
       "image_licenses": ["projects/vm-options/global/licenses/enable-vmx"],
-      "disk_name" : "traefik-acme",
       "disk_type" : "pd-ssd",
       "disk_size" : "10",
       "machine_type" : "n1-standard-1"
