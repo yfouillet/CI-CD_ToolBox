@@ -23,9 +23,9 @@ spec:
         - name: config
           configMap:
             name: traefik-config
-        - name: demo-acme
+        - name: traefik-acme
           gcePersistentDisk:
-            pdName: demo-acme
+            pdName: traefik-acme
             fsType: ext4
       containers:
       - name: traefik
@@ -34,7 +34,7 @@ spec:
           - mountPath: "/etc/traefik/config"
             name: config
           - mountPath: /etc/traefik/acme
-            name: demo-acme
+            name: traefik-acme
         args:
         - --configfile=/etc/traefik/config/traefik.toml
         - --api
