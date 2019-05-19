@@ -13,7 +13,7 @@
   ],
     "provisioners": [
       {
-        "destination": "/tmp/",
+        "destination": "/",
         "source": "./start.sh",
         "type": "file"
       },
