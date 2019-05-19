@@ -13,5 +13,5 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: front-service
+          serviceName: github-insights
           servicePort: 80
