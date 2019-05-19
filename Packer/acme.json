@@ -4,7 +4,7 @@
       "type": "googlecompute",
       "image_name" : "traefik-acme-vm",
       "project_id": "terraform-test-237408",
-      "source_image": "centos-7",
+      "source_image_family": "centos-7",
       "ssh_username": "packer",
       "zone": "europe-west4-a",
       "image_licenses": ["projects/vm-options/global/licenses/enable-vmx"],
