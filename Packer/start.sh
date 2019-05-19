@@ -1,5 +1,13 @@
 #!/bin/bash
-
+echo "Start"
+### waiting to be exist file
+while [ ! -f "/dev/disk/by-id/scsi-0Google_PersistentDisk_persistent-disk-1" ]; # true if /your/file does not exist
+do
+  sleep 1
+ echo "wait file exist"
+done
+echo "file already exists, continuing"
+sudo mkdir /mnt/traefik-acme
 sudo mkfs.ext4 -F -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/disk/by-id/scsi-0Google_PersistentDisk_persistent-disk-1
 sudo mount -o discard,defaults /dev/disk/by-id/scsi-0Google_PersistentDisk_persistent-disk-1 /mnt/traefik-acme
 sudo touch /mnt/traefik-acme/acme.json
