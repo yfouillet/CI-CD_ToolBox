@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Start"
-sleep 30s
+#sleep 30s
 ### waiting to be exist file
 if [ -f "/dev/disk/by-id/scsi-0Google_PersistentDisk_persistent-disk-1" ]; # true if /your/file does not exist
 then
