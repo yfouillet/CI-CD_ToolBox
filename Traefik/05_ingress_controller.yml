@@ -11,7 +11,6 @@ spec:
   - host: www.github-insights.fr
     http:
       paths:
-      - PathPrefix: /
         backend:
           serviceName: github-insights
           servicePort: 80
