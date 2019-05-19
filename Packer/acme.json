@@ -1,0 +1,32 @@
+{
+  "builders": [
+    {
+      "type": "googlecompute",
+      "image_name" : "traefik-acme-vm",
+      "project_id": "terraform-test-237408",
+      "source_image": "centos-7",
+      "ssh_username": "packer",
+      "zone": "europe-west4-a",
+      "image_licenses": ["projects/vm-options/global/licenses/enable-vmx"],
+      "disk_name" : "traefik-acme",
+      "disk_type" : "pd-ssd",
+      "disk_size" : "10",
+      "machine_type" : "n1-standard-1"
+    }
+  ],
+    "provisioners": [{
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
+      "inline": [
+        "sudo mkdir /mnt/traefik-acme",
+        "sudo mkfs.ext4 -F -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/disk/by-id/scsi-0Google_PersistentDisk_persistent-disk-1",
+        "sudo mount -o discard,defaults /dev/disk/by-id/scsi-0Google_PersistentDisk_persistent-disk-1 /mnt/traefik-acme",
+        "sudo touch /mnt/traefik-acme/acme.json",
+        "sudo chmod 600 /mnt/traefik-acme/acme.json",
+        "sudo umount /mnt/traefik-acme",
+  
+        "/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"
+      ],
+      "inline_shebang": "/bin/sh -x",
+      "type": "shell"
+    }]
+  }
