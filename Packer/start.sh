@@ -2,7 +2,7 @@
 echo "Start"
 #sleep 30s
 ### waiting to be exist file
-if [ -f "/dev/disk/by-id/scsi-0Google_PersistentDisk_persistent-disk-1" ]; # true if /your/file does not exist
+if [ -L "/dev/disk/by-id/scsi-0Google_PersistentDisk_persistent-disk-1" ]; # true if /your/file does not exist
 then
 echo "file exists, continuing"
 sudo mkdir /mnt/traefik-acme
@@ -12,6 +12,6 @@ sudo touch /mnt/traefik-acme/acme.json
 sudo chmod 600 /mnt/traefik-acme/acme.json
 sudo umount /mnt/traefik-acme
 else
-echo "file  not exists"
+echo "file not exists"
 echo "not finished" > "/tmp/result.txt"
 fi
