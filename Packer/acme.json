@@ -2,7 +2,6 @@
   "builders": [
     {
       "type": "googlecompute",
-      "startup_script_file": "start.sh",
       "image_name" : "traefik-acme-vm",
       "project_id": "terraform-test-237408",
       "source_image_family": "centos-7",
@@ -12,12 +11,19 @@
       "machine_type" : "n1-standard-1"
     }
   ],
-    "provisioners": [{
+    "provisioners": [
+      {
+        "destination": "/tmp/",
+        "source": "./start.sh",
+        "type": "file"
+      },
+      {
       "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
       "inline": [
         "sudo mkdir /mnt/traefik-acme"
       ],
       "inline_shebang": "/bin/sh -x",
       "type": "shell"
-    }]
+    }
+  ]
   }
