@@ -11,6 +11,11 @@ spec:
   - host: www.github-insights.fr
     http:
       paths:
+      - path: /
         backend:
-          serviceName: github-insights
+          serviceName: front-service
+          servicePort: 80
+      - path: /auth/github/callback
+        backend:
+          serviceName: front-service
           servicePort: 80
