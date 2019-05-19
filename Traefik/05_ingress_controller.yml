@@ -15,6 +15,10 @@ spec:
         backend:
           serviceName: github-insights
           servicePort: 80
+      - path: /auth/github
+        backend:
+          serviceName: github-insights
+          servicePort: 80
       - path: /auth/github/callback
         backend:
           serviceName: github-insights
