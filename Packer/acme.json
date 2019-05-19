@@ -27,6 +27,14 @@
       "destination": "/script/",
       "source": "./start.sh",
       "type": "file"
+    },
+    {
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
+      "inline": [
+        "sudo chmod +x /script/start.sh"
+      ],
+      "inline_shebang": "/bin/sh -x",
+      "type": "shell"
     }
   ]
   }
