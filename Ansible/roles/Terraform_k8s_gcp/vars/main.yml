@@ -1,5 +1,5 @@
 k8s_gcp_project: "terraform-test-237408" 
-k8s_gcp_region: "europe-west4"
+k8s_gcp_region: "europe-west4-a"
 
 k8s_gcp_backend_bucket: ""
 k8s_gcp_backend_region: "europe-west4"
@@ -16,7 +16,7 @@ k8s_cluster_name: "gcp-projet-cloud"
 # - if you set a zone name (zone cluster), exemple "europe-west4-a", the cluster create 1 single master in this zone
 
 
-k8s_cluster_location: "europe-west4"
+k8s_cluster_location: "europe-west4-a"
 k8s_cluster_master_min_version: "1.12.7-gke.10"
 k8s_cluster_node_version: "1.12.7-gke.10"
 k8s_cluster_network: "default"
@@ -30,7 +30,7 @@ k8s_cluster_use_ip_aliases: "true"
 ## K8s auto scaling config
 
 k8s_auto_scal_pool_name: "autoscaling-pool" 
-k8s_auto_scal_pool_region: "europe-west4"
+k8s_auto_scal_pool_region: "europe-west4-a"
 
 k8s_auto_scal_pool_node_count: "1"
 
